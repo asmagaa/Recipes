@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useReducer } from 'react';
+import { initialState, recipeReducer } from './recipeReducer';
+import RecipeList from './components/RecipeList';
+import RecipeForm from './components/RecipeForm';
+import SearchBar from './components/SearchBar';
+import FavoritesButton from './components/FavoritesButton';
 
 function App() {
+  const [state, dispatch] = useReducer(recipeReducer, initialState);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Lista Przepisów</h1>
+      <SearchBar dispatch={dispatch} />
+      <RecipeForm dispatch={dispatch} />
+      <FavoritesButton dispatch={dispatch} />
+      <RecipeList recipes={state.recipes} favorites={state.favorites} dispatch={dispatch} />
     </div>
   );
 }
