@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <h1>Lista Przepisów</h1>
+      <h1>przepisy</h1>
       <SearchBar dispatch={dispatch} />
       <RecipeForm dispatch={dispatch} />
       <FavoritesButton dispatch={dispatch} />
