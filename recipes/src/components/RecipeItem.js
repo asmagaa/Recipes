@@ -9,7 +9,7 @@ function RecipeItem({ recipe, dispatch }) {
         {recipe.isFavorite ? 'Odznacz' : 'Zaznacz'}
       </button>
       <button onClick={() => dispatch({ type: 'REMOVE_RECIPE', id: recipe.id })}>
-        usun
+        usuń
       </button>
     </div>
   );

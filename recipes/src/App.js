@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Przepisy</h1>
+      <h1>przepisy</h1>
       <RecipeForm dispatch={dispatch}/>
       <input 
         type="text" 

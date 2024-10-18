@@ -4,7 +4,7 @@ export const initialState = {
             content: ['Sos pomidorowy, ', 'Papryka, ', 'Przyprawy, ', 'i tak dalej...'],
             isFavorite: false },
 		{ id: 2, title: 'Król Malezji', 
-            content: ['Sultan Haji Ahmad Shah Al-Musta’in Billah ibni Almarhum Sultan Abu Bakar Ri’ayatuddin Al-Mu’azzam Shah'], 
+            content: ['Sultan Haji Ahmad Shah Al-Musta’in Billah ibni Almarhum Sultan Abu Bakar Ri’ayatuddin Al-Mu’azzam Shah.'], 
             isFavorite: true },
 	],
 }
