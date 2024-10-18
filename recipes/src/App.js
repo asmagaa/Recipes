@@ -1,7 +1,7 @@
 import React, { useReducer, useState } from 'react';
 import RecipeList from './components/RecipeList';
 import RecipeForm from './components/RecipeForm';
-import { recipeReducer, initialState } from './components/RecipeReducer';
+import { recipeReducer, initialState } from './reducers/RecipeReducer';
 import './App.css';
 
 
