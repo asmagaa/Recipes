@@ -1,20 +1,34 @@
-import React, { useReducer } from 'react';
-import { initialState, recipeReducer } from './recipeReducer';
+import React, { useReducer, useState } from 'react';
 import RecipeList from './components/RecipeList';
 import RecipeForm from './components/RecipeForm';
-import SearchBar from './components/SearchBar';
-import FavoritesButton from './components/FavoritesButton';
+import { recipeReducer, initialState } from './components/RecipeReducer';
+import './App.css';
+
 
 function App() {
   const [state, dispatch] = useReducer(recipeReducer, initialState);
+  const [showFavorites, setShowFavorites] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredRecipes = state.recipes.filter(recipe => 
+    recipe.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
+    (!showFavorites || recipe.isFavorite)
+  );
 
   return (
-    <div>
-      <h1>przepisy</h1>
-      <SearchBar dispatch={dispatch} />
-      <RecipeForm dispatch={dispatch} />
-      <FavoritesButton dispatch={dispatch} />
-      <RecipeList recipes={state.recipes} favorites={state.favorites} dispatch={dispatch} />
+    <div className="app">
+      <h1>Przepisy</h1>
+      <RecipeForm dispatch={dispatch}/>
+      <input 
+        type="text" 
+        placeholder="Wyszukaj..." 
+        value={searchTerm} 
+        onChange={e => setSearchTerm(e.target.value)} 
+      />
+      <button onClick={() => setShowFavorites(!showFavorites)}>
+        {showFavorites ? 'Wszystko' : 'Ulubione'}
+      </button>
+      <RecipeList recipes={filteredRecipes} dispatch={dispatch} />
     </div>
   );
 }

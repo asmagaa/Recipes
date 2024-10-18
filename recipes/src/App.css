@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -7,9 +9,67 @@
 body {
   background-color: #333;
   color: #fff;
-  
+  font-family: 'Jetbrains mono';
 }
 
 h1 {
+  color: red;
   text-transform: uppercase;
+  text-align: center;
+  transition: 0.3s;
+  letter-spacing: 2px;
+}
+
+h1:hover {
+  color: #fff;
+  transform: translate(1px);
+}
+
+.app {
+  font-family: 'Jetbrains mono';
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+
+.recipe-item {
+  border: 1px solid #000000;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #4b4a4a;;
+  font-family: 'Jetbrains mono';
+}
+
+.recipe-item h3 {
+  margin: 0 0 10px;
+}
+
+button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  background-color: #4b4a4a;
+  color: rgb(255, 0, 0);
+  border: 1px solid #000000;
+  cursor: pointer;
+  font-family: 'Jetbrains mono';
+  transition: 0.3s;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #ffffff;
+  color: #333;
+  transform: translate(1px);
+}
+
+input, textarea {
+  background-color: #4b4a4a;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #000000;
 }
