@@ -1,6 +1,6 @@
 export const initialState = {
 	recipes: [
-		{ id: 1, title: 'Spaghetti Babci',
+		{ id: 1, title: 'Spaghetti',
             content: ['Sos pomidorowy, ', 'Papryka, ', 'Przyprawy, ', 'i tak dalej...'],
             isFavorite: false },
 		{ id: 2, title: 'Król Malezji', 
